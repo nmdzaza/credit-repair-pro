@@ -1,12 +1,48 @@
 # credit-repair-pro
 
-> A Claude bot plugin that guides users through understanding, disputing, and improving their credit — step by step.
+> **Built for Credit Repair Business Owners** — Automate your client workflow: generate dispute letters as PDFs, send them via email, and notify clients when their case is complete. All powered by Claude.
 
 ---
 
 ## What Is credit-repair-pro?
 
-**credit-repair-pro** is a plugin for Claude that turns Claude into your personal credit repair assistant. Once installed, Claude can walk you through the entire credit repair process — from pulling your credit report to writing dispute letters and building a stronger credit profile.
+**credit-repair-pro** is a Claude plugin designed specifically for **credit repair business owners and professionals**. It automates the most time-consuming parts of running a credit repair service — analyzing client credit reports, drafting dispute letters as ready-to-send PDFs, emailing those documents directly to credit bureaus and creditors, and sending your clients a professional update message once everything is done.
+
+Stop doing it manually. Let Claude handle the workflow while you focus on growing your business.
+
+---
+
+## Who Is This For?
+
+- Credit repair business owners managing multiple clients
+- Credit coaches and financial consultants
+- Paralegals and consumer law professionals
+- Anyone running a credit repair service who wants to automate client workflows
+
+---
+
+## Core Business Features
+
+### 📄 PDF Dispute Letter Generation
+Claude automatically drafts customized dispute letters for each client based on their credit report errors and exports them as **professional, ready-to-send PDF documents**. Each PDF includes:
+- Client name and contact info
+- Bureau-specific formatting (Experian, Equifax, TransUnion)
+- Supporting argument language based on FCRA / FDCPA law
+- Date, signature line, and reference numbers
+
+### 📧 Automated Email Sending
+Once dispute letters are drafted, credit-repair-pro sends them automatically:
+- Emails dispute PDFs directly to the correct credit bureau(s)
+- Emails creditors and collection agencies with negotiation letters
+- Sends a copy to your client for their records
+- Supports custom sender name and business email branding
+
+### 💬 Client Completion Notifications
+When a client's dispute round is complete, Claude automatically sends them a **professional status message** via email (or SMS if configured), letting them know:
+- Which items were disputed and with which bureaus
+- What to expect next and the timeline
+- Any action they need to take on their end
+- A summary of their dispute packet (PDF attached)
 
 ---
 
@@ -15,6 +51,7 @@
 ### Requirements
 - A Claude account (claude.ai)
 - Access to Claude plugin/integration settings
+- SMTP email credentials (Gmail, Outlook, or custom business email) for sending automated emails
 
 ### Steps to Install
 
@@ -31,101 +68,124 @@
    - Click **"Add Plugin"** or **"Upload Plugin"**
    - Select the unzipped `credit-repair-pro` folder or the plugin config file
 
-4. **Enable the Plugin**
+4. **Configure Your Business Settings**
+   - Open `config.json` inside the plugin folder
+   - Add your business name, email address, and SMTP credentials
+   - Optionally add your logo for branded PDFs
+
+5. **Enable the Plugin**
    - Toggle the plugin **ON** in your Claude settings
-   - You should now see credit-repair-pro available in your Claude conversations
-
-5. **Start a new conversation**
-   - Type `/credit-repair-pro` or tell Claude: *"Start credit repair session"*
+   - credit-repair-pro is now active and ready to use with your clients
 
 ---
 
-## How to Use credit-repair-pro
+## How to Use credit-repair-pro (Business Workflow)
 
-Once the plugin is active, Claude will guide you through each step below. You can also jump to any step by telling Claude which one you need.
-
-### Step 1 — Pull Your Credit Reports
+### Step 1 — Add a Client
 ```
-"Help me get my free credit reports"
+"Add a new client: [Client Name], email: [client@email.com]"
 ```
-Claude will direct you to **AnnualCreditReport.com** and explain how to request reports from all three bureaus: **Experian, Equifax, and TransUnion**.
+Claude creates a client profile and stores their information for the session.
 
 ---
 
-### Step 2 — Review & Identify Errors
+### Step 2 — Upload or Paste the Client's Credit Report
 ```
-"Help me review my credit report for errors"
+"Here is my client's credit report: [paste report text or upload file]"
 ```
-Claude will walk you through what to look for:
-- Accounts that are not yours
-- Incorrect balances or credit limits
-- Late payments you paid on time
-- Duplicate accounts
-- Old negative items past the 7-year reporting limit
+Claude analyzes the report from all three bureaus and identifies all disputable items — late payments, collections, errors, outdated accounts, and more.
 
 ---
 
-### Step 3 — Dispute Errors with the Bureaus
+### Step 3 — Generate Dispute Letters as PDFs
 ```
-"Write a dispute letter for [describe the error]"
+"Draft dispute letters for all errors found and export them as PDFs"
 ```
-Claude will generate a customized dispute letter you can send to the credit bureau(s) by mail or online. It will also explain how to submit disputes online and what documentation to include.
+Claude creates bureau-specific dispute letters for each error, formatted professionally and exported as PDF files ready for sending.
 
 ---
 
-### Step 4 — Follow Up on Disputes
+### Step 4 — Send Dispute Emails to Bureaus & Creditors
 ```
-"Help me follow up on my credit dispute"
+"Send the dispute letters to the appropriate credit bureaus and creditors"
 ```
-Bureaus have **30 days** to respond. Claude will help you track timelines and write follow-up letters if needed.
+Claude emails the PDFs to Experian, Equifax, TransUnion, and any creditors involved — using your business email as the sender. Each email is logged for your records.
 
 ---
 
-### Step 5 — Negotiate with Creditors
+### Step 5 — Follow Up on Open Disputes
 ```
-"Help me write a pay-for-delete letter to [creditor name]"
+"Check follow-up status for [Client Name] and send reminder letters if needed"
 ```
-Claude can draft goodwill letters, pay-for-delete requests, and debt validation letters to send directly to creditors or collection agencies.
+Bureaus have **30 days** to respond. Claude tracks timelines and automatically drafts follow-up letters for any disputes that haven't received a response.
 
 ---
 
-### Step 6 — Build Positive Credit History
+### Step 6 — Negotiate with Creditors on Behalf of Client
 ```
-"Give me a plan to build my credit score"
+"Draft a pay-for-delete letter to [Creditor Name] for [Client Name]"
 ```
-Claude will create a personalized action plan covering:
-- Secured credit cards
-- Credit-builder loans
-- Becoming an authorized user
-- Ideal credit utilization targets
-- Payment scheduling tips
+Claude drafts goodwill letters, pay-for-delete requests, and debt validation letters as PDFs and emails them directly to creditors.
 
 ---
 
-### Step 7 — Monitor Your Progress
+### Step 7 — Notify the Client When Complete
 ```
-"How do I monitor my credit going forward?"
+"Send [Client Name] a completion message summarizing what was done"
 ```
-Claude will recommend free and paid credit monitoring tools and explain how to set up alerts for changes to your credit file.
+Claude sends your client a **professional completion notification email** that includes:
+- A full summary of all disputes filed
+- The attached PDF dispute packet
+- Next steps and expected timeline
+- Your business contact info for follow-up questions
 
 ---
 
-## Example Commands
+### Step 8 — Build Client's Credit Going Forward
+```
+"Give [Client Name] a personalized credit-building plan"
+```
+Claude creates a tailored plan covering secured cards, credit-builder loans, utilization targets, and payment scheduling — which can also be emailed to the client as a PDF guide.
+
+---
+
+## Example Business Commands
 
 | What You Want | What to Say to Claude |
 |---|---|
-| Start from the beginning | "Start my credit repair journey" |
-| Write a dispute letter | "Write a dispute letter for a late payment error" |
-| Understand your score | "Explain why my credit score is low" |
-| Remove a collection | "Help me remove a collection account" |
-| Improve score fast | "What is the fastest way to raise my credit score?" |
-| Goodwill letter | "Write a goodwill letter to remove a late payment" |
+| Add a new client | "Add client: Jane Doe, jane@email.com" |
+| Analyze credit report | "Analyze this credit report and find all disputable items" |
+| Generate all dispute PDFs | "Draft dispute letters for all errors and export as PDFs" |
+| Email bureaus | "Send dispute letters to all three credit bureaus" |
+| Email creditor | "Send a pay-for-delete letter to Capital One for Jane" |
+| Notify client | "Send Jane a completion email with the dispute summary" |
+| Follow up | "Send follow-up letters for any disputes older than 30 days" |
+| Build credit plan | "Email Jane a personalized credit-building plan as a PDF" |
+
+---
+
+## Email & PDF Configuration
+
+In the `config.json` file inside the plugin folder, you can customize:
+
+```json
+{
+  "business_name": "Your Credit Repair Business",
+  "business_email": "you@yourbusiness.com",
+  "smtp_host": "smtp.gmail.com",
+  "smtp_port": 587,
+  "smtp_user": "you@yourbusiness.com",
+  "smtp_password": "your_app_password",
+  "pdf_logo": "assets/logo.png",
+  "pdf_footer": "Your Business Name | yourbusiness.com | (555) 000-0000"
+}
+```
 
 ---
 
 ## Disclaimer
 
-credit-repair-pro is an informational tool only. It is **not** a substitute for professional legal or financial advice. All dispute letters and strategies provided are based on publicly available consumer protection laws (FCRA, FDCPA). Results may vary. You are responsible for reviewing all letters before sending them.
+credit-repair-pro is an informational and automation tool for business use. It is **not** a substitute for professional legal advice. All dispute letters are based on publicly available consumer protection laws (FCRA, FDCPA). Business owners are responsible for reviewing all documents before sending. Results may vary per client.
 
 ---
 
@@ -149,4 +209,4 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## Support
 
-If this plugin helped you, please **star this repo** so others can find it!
+If this plugin is helping your business, please **star this repo** so other credit repair professionals can find it!
